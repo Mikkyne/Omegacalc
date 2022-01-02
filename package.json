@@ -1,0 +1,30 @@
+{
+  "name": "omegacalc",
+  "version": "0.0.1",
+  "description": "Synergism calculator for post-omega heptaract targets",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikkyne/Omegacalc.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mikkyne/Omegacalc/issues"
+  },
+  "homepage": "https://github.com/Mikkyne/Omegacalc#readme",
+  "devDependencies": {
+    "@chialab/esbuild-plugin-html": "^0.14.10",
+    "esbuild": "^0.14.10",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
