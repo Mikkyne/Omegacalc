@@ -2,7 +2,7 @@
 <html>
   <head>
   	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Pretty C2 Tables</title>
+    <title>Omega Calc</title>
     <link rel="stylesheet" type="text/css" href="prettify.css">
     <script language="javascript" src="lz-string.js"></script>
     <script type="text/javascript" src="tables.js"></script>
@@ -12,323 +12,90 @@
 
 <div class="abovetable">
    <div class="mgmt">
-      <textarea id="foo" name="foo" autofocus onpaste="doClick()" placeholder="Paste Trimps save string in here, ah."></textarea>
+      <textarea id="foo" name="foo" autofocus onpaste="doClick()" placeholder="Paste Synergism save string in here"></textarea>
       <br>
-      <span><button onclick="doClick()">Get Pretty Challenge Tables</button>
+      <span><button onclick="doClick()">Get your info</button>
       <br>
       <button onclick="getSave()">Retrieve Save</button>
-      <p>
-      <button onclick="myToggle()">Hide/Show What-If Scenarios</button><br>
-      <button onclick="doReset()" class="hideme">Reset What-If Scenarios</button>
-   </div>
-   <div class="notes">
-        <button onclick="displayThis('saveNotes')">Show save notes (May contain spoilers)</button>
-	<br>
-	<div id="saveNotes" class="noDisplay">
-		Nothing to see her until you load a save.
-	</div>
    </div>
 </div>
-<p></p>
-  <div>
-	<table  class="datagrid" border="0" id="challenges">
-		<tr>
-			<td>
-				<table border="1"  id="c2table" class="sortable">
-					<thead>
-						<tr>
-							<th onclick="sortTable('c2table',0)">Basic<br>Helium<br>Challenge</th>
-							<th class="sorttable_numeric" onclick="sortTable_num('c2table',1)">HZE</th>
-							<th class="sorttable_numeric" onclick="sortTable_num('c2table',2)">C2%</th>
-							<th class="hideme">What<br>If?</th>
-							<th class="hideme">New<br>C2%</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-					<tfoot>
-					</tfoot>
-				</table>
-			</td>
-
-			<td>
-				<table border="1"  id="c2table2" class="sortable">
-					<thead>
-						<tr>
-							<th onclick="sortTable('c2table2',0)">Complex<br>Helium<br>Challenge</th>
-							<th class="sorttable_numeric" onclick="sortTable_num('c2table2',1)">HZE</th>
-							<th class="sorttable_numeric" onclick="sortTable_num('c2table2',2)">C2%</th>
-							<th class="hideme">What<br>If?</th>
-							<th class="hideme">New<br>C2%</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-					<tfoot>
-					</tfoot>
-				</table>
-			</td>
-
-			<td style="display: none;">
-				<table border="1"  id="c3table" class="sortable">
-					<thead>
-						<tr>
-							<th onclick="sortTable('c3table',0)">Radon<br>Challenge</th>
-							<th class="sorttable_numeric" onclick="sortTable_num('c3table',1)">HZE</th>
-							<th class="sorttable_numeric" onclick="sortTable_num('c3table',2)">C2%</th>
-							<th class="sorttable_nosort hideme">What<br>If?</th>
-							<th class="sorttable_nosort hideme">New<br>C3%</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-					<tfoot>
-					</tfoot>
-				</table>
-			</td>
-		</tr>
-	  </table>
-  </div>
-	<p></p>
-<div class="belowTable">
-   <div class="notes">
-        <button onclick="displayThis('saveNotes2')">Show more information (May contain spoilers)</button>
-	<br>
-	<div id="saveNotes2" class="noDisplay">
-		Nothing to see her until you load a save.
-	</div>
+   <div class="tiertable">
+     <table class="tg">
+ <tbody>
+   <tr>
+     <td class="tg-f6rp"><span style="font-weight:bold;color:#FFF;background-color:#674EA7">Current Chronos Tier</span></td>
+     <td class="tg-xujr"><span style="font-weight:bold;color:#FFF;background-color:#F00">Current Hyper Tier</span></td>
+     <td class="tg-5j2a"><span style="font-weight:bold;color:#FFF;background-color:#3D85C6">Current Quark Tier</span></td>
+     <td class="tg-6j2y"><span style="font-weight:bold;color:#FFF;background-color:#7F6000">Current Challenge Tier</span></td>
+   </tr>
+   <tr>
+     <td class="tg-639j">chronostier</td>
+     <td class="tg-639j">hypertier</td>
+     <td class="tg-639j">quarktier</td>
+     <td class="tg-639j">challengetier</td>
+   </tr>
+   <tr>
+     <td class="tg-f6rp"><span style="font-weight:bold;color:#FFF;background-color:#674EA7">Number you can buy</span></td>
+     <td class="tg-xujr"><span style="font-weight:bold;color:#FFF;background-color:#F00">Number you can buy</span></td>
+     <td class="tg-5j2a"><span style="font-weight:bold;color:#FFF;background-color:#3D85C6">Number you can buy</span></td>
+     <td class="tg-6j2y"><span style="font-weight:bold;color:#FFF;background-color:#7F6000">Number you can buy</span></td>
+   </tr>
+   <tr>
+     <td class="tg-639j">chronosbuy</td>
+     <td class="tg-639j">hyperbuy</td>
+     <td class="tg-639j">quarkbuy</td>
+     <td class="tg-639j">challengebuy</td>
+   </tr>
+   <tr>
+     <td class="tg-f6rp"><span style="font-weight:bold;color:#FFF;background-color:#674EA7">Chronos</span></td>
+     <td class="tg-xujr"><span style="font-weight:bold;color:#FFF;background-color:#F00">HyperReal</span></td>
+     <td class="tg-5j2a"><span style="font-weight:bold;color:#FFF;background-color:#3D85C6">Quarks</span></td>
+     <td class="tg-6j2y"><span style="font-weight:bold;color:#FFF;background-color:#7F6000">Challenge</span></td>
+   </tr>
+   <tr>
+     <td class="tg-639j">chronoscap</td>
+     <td class="tg-639j">hypercap</td>
+     <td class="tg-639j">quarkcap</td>
+     <td class="tg-639j">challengecap</td>
+   </tr>
+   <tr>
+     <td class="tg-3vlg"><span style="font-weight:bold;color:#FFF;background-color:#38761E">Current HotA Tier</span></td>
+     <td class="tg-r4j4"><span style="font-weight:bold;color:#FFF;background-color:#FF9900">Current Accel Tier</span></td>
+     <td class="tg-8hj0"><span style="font-weight:bold;color:#FFF;background-color:#44808D">Current A. Boost Tier</span></td>
+     <td class="tg-2lj8"><span style="font-weight:bold;color:#FFF;background-color:#A84D7A">Current Multi Tier</span></td>
+   </tr>
+   <tr>
+     <td class="tg-639j">hotatier</td>
+     <td class="tg-639j">acceltier</td>
+     <td class="tg-639j">aboosttier</td>
+     <td class="tg-639j">multitier</td>
+   </tr>
+   <tr>
+     <td class="tg-3vlg"><span style="font-weight:bold;color:#FFF;background-color:#38761E">Number you can buy</span></td>
+     <td class="tg-r4j4"><span style="font-weight:bold;color:#FFF;background-color:#FF9900">Number you can buy</span></td>
+     <td class="tg-8hj0"><span style="font-weight:bold;color:#FFF;background-color:#44808D">Number you can buy</span></td>
+     <td class="tg-2lj8"><span style="font-weight:bold;color:#FFF;background-color:#A84D7A">Number you can buy</span></td>
+   </tr>
+   <tr>
+     <td class="tg-639j">hotabuy</td>
+     <td class="tg-639j">accelbuy</td>
+     <td class="tg-639j">aboostbuy</td>
+     <td class="tg-639j">multibuy</td>
+   </tr>
+   <tr>
+     <td class="tg-3vlg"><span style="font-weight:bold;color:#FFF;background-color:#38761E">HotA</span></td>
+     <td class="tg-r4j4"><span style="font-weight:bold;color:#FFF;background-color:#FF9900">Accelerators</span></td>
+     <td class="tg-8hj0"><span style="font-weight:bold;color:#FFF;background-color:#44808D">Accel Boost</span></td>
+     <td class="tg-2lj8"><span style="font-weight:bold;color:#FFF;background-color:#A84D7A">Multipliers</span></td>
+   </tr>
+   <tr>
+     <td class="tg-639j">htoacap</td>
+     <td class="tg-639j">accelcap</td>
+     <td class="tg-639j">aboostcap</td>
+     <td class="tg-639j">multicap</td>
+   </tr>
+ </tbody>
+ </table>
    </div>
-</div>
-	
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-     <span class="close">&times;</span>
-	<table>
-		<tr>
-			<td> Display First </td> 
-			<td><select id="myString1" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Second </td> 
-			<td><select id="myString2" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Third </td> 
-			<td><select id="myString3" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Fourth </td> 
-			<td><select id="myString4" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Fifth </td> 
-			<td><select id="myString5" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Sixth </td> 
-			<td><select id="myString6" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Seventh </td> 
-			<td><select id="myString7" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Eighth </td> 
-			<td><select id="myString8" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Nineth </td> 
-			<td><select id="myString9" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td> Display Tenth </td> 
-			<td><select id="myString10" onChange="previewUpdate();">
-				<option value="">None</option>
-				<option value="h">Helium</option>
-				<option value="r">Radon</option>
-				<option value="h1">U1 HZE</option>
-				<option value="r1">U2 HZE</option>
-				<option value="f">Fluffy</option>
-				<option value="s">Scruffy</option>
-				<option value="3">Previous radon run zone (S3)</option>
-				<option value="c">Challenges Total</option>
-				<option value="m">Mayhem Completions</option>
-				<option value="p">Pandemonium Completions</option>
-				<option value="t">Runetrinkets</option>
-				<option value="a">Highest SA cleared</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<button id="myStrings" onClick="doMyString();"> Update </button>
-			</td>
-			<td>
-				<span id="preView"></span>
-			</td>
-		</tr>
-	  </table>
-  </div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 </body>
 </html>
