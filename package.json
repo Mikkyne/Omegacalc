@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node esbuild.js",
+    "dev": "DEV_SERVER=true node esbuild.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +28,8 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.4"
   }
 }

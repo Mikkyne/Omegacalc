@@ -11,6 +11,14 @@ const config = {
   plugins: [
     htmlPlugin({}),
   ],
+  loader: {
+    '.png': 'dataurl',
+    '.woff': 'dataurl',
+    '.woff2': 'dataurl',
+    '.eot': 'dataurl',
+    '.ttf': 'dataurl',
+    '.svg': 'dataurl',
+  },
 }
 
 esbuild.build(config).catch(() => process.exit(0))
