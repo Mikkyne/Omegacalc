@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node esbuild.js",
-    "dev": "DEV_SERVER=true node esbuild.js",
+    "dev": "node esbuild-dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
