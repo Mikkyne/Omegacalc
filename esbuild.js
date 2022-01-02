@@ -7,8 +7,10 @@ const config = {
   outdir: 'build/assets',
   platform: 'browser',
   sourcemap: true,
+  define: {
+    "process.env.NODE_ENV": "production"
+  },
   loader: {
-    '.html': 'file',
     '.png': 'dataurl',
     '.woff': 'dataurl',
     '.woff2': 'dataurl',

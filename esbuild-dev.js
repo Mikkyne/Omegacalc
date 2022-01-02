@@ -1,16 +1,14 @@
-import process from 'process'
-import esbuild from 'esbuild'
-import htmlPlugin from '@chialab/esbuild-plugin-html';
+import esbuildServe from 'esbuild-serve'
 
 const config = {
-  entryPoints: ['src/index.html'],
+  entryPoints: ['src/index.tsx'],
   bundle: true,
-  outdir: 'build',
+  outdir: 'build/assets',
   platform: 'browser',
   sourcemap: true,
-  plugins: [
-    htmlPlugin({}),
-  ],
+  define: {
+    "process.env.NODE_ENV": `"production"`
+  },
   loader: {
     '.png': 'dataurl',
     '.woff': 'dataurl',
@@ -19,7 +17,12 @@ const config = {
     '.ttf': 'dataurl',
     '.svg': 'dataurl',
   },
-  port: 8000,
 }
 
-await esbuild.serve(config).catch(() => process.exit(0))
+await esbuildServe(
+  config,
+  {
+    port: 8000,
+    root: 'build'
+  }
+)
