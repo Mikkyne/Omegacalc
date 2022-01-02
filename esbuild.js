@@ -8,7 +8,7 @@ const config = {
   platform: 'browser',
   sourcemap: true,
   define: {
-    "process.env.NODE_ENV": "production"
+    "process.env.NODE_ENV": `"production"`
   },
   loader: {
     '.png': 'dataurl',
