@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Header, Button } from 'semantic-ui-react'
 import SaveInput from '../SaveInput'
 import Timer from '../Timer'
 import SaveContext from '../../contexts/saveContext'
@@ -13,17 +13,22 @@ const App = () => {
       <TimerContext.Provider value={timer}>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={16} textAlign='center' color='black' stretched>
+            <Grid.Column width={16} textAlign='center' color='black'>
+               <Header size='huge' color='white'>Huge Header</Header>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={16} textAlign='center' color='black'>
               <Timer interval={500} setTimer={setTimer} currentTimer={timer} />
-              <SaveInput setSave={setSave} />
+              <SaveInput setSave={setSave}/>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={8} color='black'>
-              <div>Buttons</div>
+              <Button>Buttons</Button>
             </Grid.Column>
             <Grid.Column width={8} color='black'>
-              <div>Info area</div>
+              <Button>Info area</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
