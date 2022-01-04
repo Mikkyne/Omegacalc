@@ -36,20 +36,6 @@ const App = () => {
               <Button negative size='massive'>Get save back</Button>
             </Grid.Column>
           </Grid.Row>
-        </Grid>
-        <Grid>
-            <Grid.Row>
-              <Grid.Column height={16} textAlign='center' color='black'>
-                <Menu inverted widths={5} size='massive' >
-                  <Menu.Item onClick='Parameters'>Parameters</Menu.Item>
-                  <Menu.Item onClick='Tier'>Tier</Menu.Item>
-                  <Menu.Item onClick='ShopOpti'>Shop Opti</Menu.Item>
-                  <Menu.Item onClick='HeptList'>Hept List</Menu.Item>
-                  <Menu.Item onClick='NerdStats'>Nerd Stats</Menu.Item>
-                </Menu>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
       </TimerContext.Provider>
     </SaveContext.Provider>
   )

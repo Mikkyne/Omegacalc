@@ -38,8 +38,8 @@ const App = () => {
               <Menu inverted widths={5} size='massive' >
                 <Menu.Item onClick='Parameters'>Parameters</Menu.Item>
                 <Menu.Item onClick='Tier'>Tier</Menu.Item>
-                <Menu.Item onClick='ShopOpti'>Shop Opti</Menu.Item>
-                <Menu.Item onClick='HeptList'>Hept List</Menu.Item>
+                <Menu.Item onClick='ShopOpti'>Shop Optimization</Menu.Item>
+                <Menu.Item onClick='HeptList'>Hepteract List</Menu.Item>
                 <Menu.Item onClick='NerdStats'>Nerd Stats</Menu.Item>
               </Menu>
             </Grid.Column>
