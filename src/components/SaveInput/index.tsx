@@ -11,7 +11,11 @@ const SaveInput = ({setSave}:SaveInputProps) => {
     setSave(JSON.parse(decodedSave))
   }
 
-  return <Input onChange={(e) => saveChanged(e.target.value)} />
+  return <Input onChange={(e) => saveChanged(e.target.value)}
+                fluid
+                placeholder='Enter Save here..'
+                size='massive'
+                />
 }
 
 export default SaveInput
