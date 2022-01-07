@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Grid } from 'semantic-ui-react'
+import { Button, Grid, SemanticCOLORS } from 'semantic-ui-react'
 
 interface MenuProps {
   currentScreen: string,
@@ -11,7 +11,7 @@ interface MenuItemProps {
   onChange: Function,
   currentScreen: string,
   value: string,
-  color: string,
+  color: SemanticCOLORS,
 }
 
 const MenuItem = ({ label, onChange, currentScreen, value, color }: MenuItemProps) => {
@@ -22,27 +22,27 @@ const menuItems = [
   {
     label: 'Overview',
     value: 'overview',
-    color: 'yellow',
+    color: 'yellow' as SemanticCOLORS,
   },
   {
     label: 'Tiers',
     value: 'tiers',
-    color: 'red',
+    color: 'red' as SemanticCOLORS,
   },
   {
     label: 'Hept List',
     value: 'hept-list',
-    color: 'green',
+    color: 'green' as SemanticCOLORS,
   },
   {
     label: 'Shop Optimization',
     value: 'shop-opti',
-    color: 'blue',
+    color: 'blue' as SemanticCOLORS,
   },
   {
     label: 'Nerd Stats',
     value: 'nerd-stats',
-    color: 'orange',
+    color: 'orange' as SemanticCOLORS,
   }
 ]
 
