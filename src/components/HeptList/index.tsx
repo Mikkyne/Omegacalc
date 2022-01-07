@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dropdown, Grid, Input } from 'semantic-ui-react'
+import { Dropdown, Grid, Input, Table } from 'semantic-ui-react'
 
 const optionshept = [
 { key: 'Chronos', text: 'Chronos', value: 'Chronos' },
@@ -24,6 +24,9 @@ const App = () => {
         <h5>Tier</h5>
           <Input/>
         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row centered>
+        <Table>
       </Grid.Row>
     </Grid>
   )

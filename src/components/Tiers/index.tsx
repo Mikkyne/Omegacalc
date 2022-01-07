@@ -7,7 +7,7 @@ const Tiers = () => {
     <Grid.Column width={8}>
       <Grid.Row centered>
         <Grid.Column>
-          <Table celled textAlign='center'>
+          <Table textAlign='center'>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Current Chronos Tier</Table.HeaderCell>
@@ -29,7 +29,7 @@ const Tiers = () => {
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column>
-          <Table celled textAlign='center'>
+          <Table textAlign='center'>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Number you can buy</Table.HeaderCell>
@@ -51,7 +51,7 @@ const Tiers = () => {
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column>
-          <Table celled textAlign='center'>
+          <Table textAlign='center'>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Chronos</Table.HeaderCell>
@@ -73,7 +73,7 @@ const Tiers = () => {
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column>
-          <Table celled textAlign='center'>
+          <Table textAlign='center'>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Number you can buy</Table.HeaderCell>
