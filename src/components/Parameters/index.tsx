@@ -43,10 +43,9 @@ const Parameters = () => {
           <h5>Number of Add per Day</h5>
           <Input onChange={(e) => setAddUses(parseInt(e.target.value, 10))} />
         </Grid.Column>
-      </Grid.Row>
-      <Grid.Row centered>
         <Grid.Column textAlign='center' width={2}>
-          
+          <h5>Hepteract per second</h5>
+          <Input/>
         </Grid.Column>
       </Grid.Row>
     </Grid>
