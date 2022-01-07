@@ -63,7 +63,7 @@ const App = () => {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={16} color='black'>
-              <Timer interval={500} setTimer={setTimer} currentTimer={timer} />
+              <Timer setTimer={setTimer} currentTimer={timer} />
               <Parameters />
             </Grid.Column>
           </Grid.Row>
