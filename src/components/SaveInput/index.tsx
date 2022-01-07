@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Input, Grid } from 'semantic-ui-react'
+import { Button, Input, Grid, Divider } from 'semantic-ui-react'
 
 interface SaveInputProps {
   setSave:Function
@@ -15,10 +15,13 @@ const SaveInput = ({setSave}:SaveInputProps) => {
   return (
     <Grid>
       <Grid.Row>
-        <Grid.Column width={4}>
-          <Input fluid placeholder='Enter save here...' size='massive' onChange={(e) => setSaveInput(e.target.value)} value={saveInput} />
+        <Grid.Column width={16}>
+          <Input  placeholder='Enter save here...' size='large' onChange={(e) => setSaveInput(e.target.value)} value={saveInput} />
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column  width={16}>
+        </Grid.Column>
+        <Divider hidden />
+        <Grid.Column width={16}>
           <Button onClick={() => saveChanged(saveInput)}>Decode Save</Button>
         </Grid.Column>
       </Grid.Row>

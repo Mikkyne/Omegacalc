@@ -14,22 +14,10 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({ label, onChange, currentScreen, value }:MenuItemProps) => {
-  return <Button onClick={() => onChange(value)} active={currentScreen === value}>{ label }</Button>
+  return <Button fluid onClick={() => onChange(value)} active={currentScreen === value}>{ label }</Button>
 }
 
 const menuItems = [
-  {
-    label: 'Hept List',
-    value: 'hept-list'
-  },
-  {
-    label: 'Nerd Stats',
-    value: 'nerd-stats'
-  },
-  {
-    label: 'Shop Optimization',
-    value: 'shop-opti',
-  },
   {
     label: 'Parameters',
     value: 'parameters'
@@ -37,18 +25,30 @@ const menuItems = [
   {
     label: 'Tiers',
     value: 'tiers'
+  },
+  {
+    label: 'Hept List',
+    value: 'hept-list'
+  },
+  {
+    label: 'Shop Optimization',
+    value: 'shop-opti',
+  },
+  {
+    label: 'Nerd Stats',
+    value: 'nerd-stats'
   }
 ]
 
 const Menu = ({currentScreen, onChange}:MenuProps) => {
   return (
     <Grid>
-      <Grid.Row>
-        {menuItems.map((menuItem) => (
-          <Grid.Column width={4} >
+      <Grid.Row centered>
+          {menuItems.map((menuItem) => (
+          <Grid.Column width={3}>
             <MenuItem {...menuItem} onChange={onChange} currentScreen={currentScreen} />
           </Grid.Column>
-        ))}
+          ))}
       </Grid.Row>
     </Grid>
   )

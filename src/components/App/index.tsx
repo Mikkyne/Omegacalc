@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Divider } from 'semantic-ui-react'
 import SaveInput from '../SaveInput'
 import Timer from '../Timer'
 import HeptList from '../HeptList'
@@ -28,34 +28,36 @@ const CurrentScreen = ({ screen }:CurrentScreenProps) => {
     case 'tiers':
       return <Tiers />
     default:
-      return <HeptList />
+      return <ShopOpti />
   }
 }
 
 const App = () => {
   const [save, setSave] = useState("")
   const [timer, setTimer] = useState(new Date())
-  const [currentScreen, setCurrentScreen] = useState('hept-list')
+  const [currentScreen, setCurrentScreen] = useState('shop-opti')
   return (
     <SaveContext.Provider value={save}>
       <TimerContext.Provider value={timer}>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={4} textAlign='center' color='black'>
+            <Grid.Column width={16} textAlign='center' color='black'>
               <h1>Omega Calc</h1>
             </Grid.Column>
-            <Grid.Column width={12} textAlign='center' color='black'>
+            <Grid.Column width={16} textAlign='center' color='black'>
               <Timer interval={500} setTimer={setTimer} currentTimer={timer} />
               <SaveInput setSave={setSave} />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={8} color='black'>
+            <Grid.Column width={16} textAlign='center' color='black'>
               <Menu currentScreen={currentScreen} onChange={(newScreen:string) => setCurrentScreen(newScreen)} />
             </Grid.Column>
-            <Grid.Column width={8} color='black'>
-              <CurrentScreen screen={currentScreen} />
-            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+          <Grid.Column width={16} textAlign='center' color='black'>
+            <CurrentScreen screen={currentScreen} />
+          </Grid.Column>
           </Grid.Row>
         </Grid>
       </TimerContext.Provider>
