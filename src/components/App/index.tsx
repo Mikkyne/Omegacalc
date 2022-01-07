@@ -11,6 +11,7 @@ import SaveContext, { defaultSave, SaveFile } from '../../contexts/saveContext'
 import TimerContext from '../../contexts/timerContext'
 import NerdStats from '../NerdStats'
 import { useSave } from '../../hooks/saveHooks'
+import Explanation from '../Explanation'
 
 interface CurrentScreenProps {
   screen: string
@@ -72,6 +73,11 @@ const App = () => {
           <Grid.Row>
             <Grid.Column width={16} textAlign='center' color='black'>
               <CurrentScreen screen={currentScreen} />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={16} textAlign='center' color='black'>
+              <Explanation />
             </Grid.Column>
           </Grid.Row>
         </Grid>
