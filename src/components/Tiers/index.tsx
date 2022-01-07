@@ -103,7 +103,7 @@ const Tiers = () => {
                 <Table.HeaderCell>Current HotA Tier</Table.HeaderCell>
                 <Table.HeaderCell>Current Accel Tier</Table.HeaderCell>
                 <Table.HeaderCell>Current A. Boost Tier</Table.HeaderCell>
-                <Table.HeaderCell>Current Challenge Tier</Table.HeaderCell>
+                <Table.HeaderCell>Current Multi Tier</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>

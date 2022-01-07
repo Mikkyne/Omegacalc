@@ -42,10 +42,10 @@ const menuItems = [
 
 const Menu = ({currentScreen, onChange}:MenuProps) => {
   return (
-    <Grid>
+    <Grid columns='equal'>
       <Grid.Row centered>
           {menuItems.map((menuItem) => (
-          <Grid.Column width={3}>
+          <Grid.Column>
             <MenuItem {...menuItem} onChange={onChange} currentScreen={currentScreen} />
           </Grid.Column>
           ))}
