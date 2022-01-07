@@ -1,6 +1,6 @@
 import React from 'react'
-import { Dropdown, Grid, Input, Segment } from 'semantic-ui-react'
-import { useQuarkGain, usePowderRatio, useAddUses } from '../../hooks/saveHooks'
+import { Dropdown, Grid, Input } from 'semantic-ui-react'
+import { useQuarkGain, usePowderRatio, useAddUses, useHeptsPerSecond } from '../../hooks/saveHooks'
 
 
 const optionsquark = [
@@ -28,6 +28,7 @@ const Parameters = () => {
   const { setQuarkGain } = useQuarkGain()
   const { setPowderRatio } = usePowderRatio()
   const { setAddUses } = useAddUses()
+  const { setHeptsPerSecond } = useHeptsPerSecond()
   return (
     <Grid>
       <Grid.Row centered>
@@ -45,7 +46,7 @@ const Parameters = () => {
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h5>Hepteract per second</h5>
-          <Input/>
+          <Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))}/>
         </Grid.Column>
       </Grid.Row>
     </Grid>

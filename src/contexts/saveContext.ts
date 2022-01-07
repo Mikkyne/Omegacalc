@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface HepteractSave {
+export interface HepteractSave {
   BAL: number,
   BASE_CAP: number,
   CAP: number,
@@ -21,7 +21,8 @@ interface HepteractSaveList {
 }
 
 export interface SaveFile {
-  hepteractCrafts: HepteractSaveList
+  hepteractCrafts: HepteractSaveList,
+  offlinetick: number
 }
 
 export const defaultSave = {
@@ -34,7 +35,9 @@ export const defaultSave = {
   powderRatio: 0.5,
   setPowderRatio: (powderRatio: number) => { },
   addUses: 24,
-  setAddUses: (addUses: number) => { }
+  setAddUses: (addUses: number) => { },
+  heptsPerSecond: 0,
+  setHeptsPerSecond: (heptsPerSecond: number) => { },
 }
 
 const saveContext = React.createContext(defaultSave)

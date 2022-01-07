@@ -45,7 +45,8 @@ const App = () => {
     setDecodedSave: (newDecodedSave: SaveFile) => setSave((save) => ({ ...save, decodedSave: newDecodedSave })),
     setQuarkGain: (newQuarkGain: number) => setSave((save) => ({ ...save, quarkGain: newQuarkGain })),
     setPowderRatio: (newPowderRatio: number) => setSave((save) => ({ ...save, powderRatio: newPowderRatio })),
-    setAddUses: (newAddUses: number) => setSave((save) => ({ ...save, addUses: newAddUses }))
+    setAddUses: (newAddUses: number) => setSave((save) => ({ ...save, addUses: newAddUses })),
+    setHeptsPerSecond: (newHeptsPerSecond: number) => setSave((save) => ({ ...save, heptsPerSecond: newHeptsPerSecond })),
   })
   const [timer, setTimer] = useState(new Date())
   const [currentScreen, setCurrentScreen] = useState('parameters')

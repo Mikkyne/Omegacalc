@@ -26,6 +26,11 @@ export const usePowderRatio = () => {
   return { powderRatio, setPowderRatio }
 }
 
+export const useHeptsPerSecond = () => {
+  const { heptsPerSecond, setHeptsPerSecond } = useContext(SaveContext)
+  return { heptsPerSecond, setHeptsPerSecond }
+}
+
 export interface Hepteract {
   name: string,
   balance: number,

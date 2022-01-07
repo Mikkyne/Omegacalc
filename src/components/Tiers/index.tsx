@@ -1,18 +1,22 @@
 import React from 'react'
-import { Table, Grid, Tab } from 'semantic-ui-react'
-import { useHepts, Hepteract } from '../../hooks/saveHooks'
+import { Table, Grid } from 'semantic-ui-react'
+import { useHepts, Hepteract, useHeptsPerSecond } from '../../hooks/saveHooks'
+import { useSecondsSinceSave } from '../../hooks/timerHooks'
 
 interface HeptTableRowProps {
   hepteract:Hepteract
 }
 
 const HeptTableRow = ({ hepteract }:HeptTableRowProps) => {
+  const saveTime = useSecondsSinceSave()
+  const { heptsPerSecond } = useHeptsPerSecond()
+
   return (
     <Table.Row>
       <Table.Cell>{hepteract.name}</Table.Cell>
       <Table.Cell>{hepteract.tier}</Table.Cell>
       <Table.Cell>{hepteract.balance}</Table.Cell>
-      <Table.Cell></Table.Cell>
+      <Table.Cell>{Math.floor((saveTime * heptsPerSecond) / hepteract.cost)}</Table.Cell>
     </Table.Row>
   )
 }
