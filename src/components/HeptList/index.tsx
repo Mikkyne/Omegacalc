@@ -27,6 +27,7 @@ const App = () => {
       </Grid.Row>
       <Grid.Row centered>
         <Table>
+        </Table>
       </Grid.Row>
     </Grid>
   )

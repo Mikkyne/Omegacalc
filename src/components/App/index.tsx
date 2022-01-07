@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, Divider } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import SaveInput from '../SaveInput'
 import Timer from '../Timer'
 import HeptList from '../HeptList'
@@ -7,7 +7,7 @@ import Parameters from '../Parameters'
 import ShopOpti from '../ShopOpti'
 import Tiers from '../Tiers'
 import Menu from '../Menu'
-import SaveContext from '../../contexts/saveContext'
+import SaveContext, { defaultSave, SaveFile } from '../../contexts/saveContext'
 import TimerContext from '../../contexts/timerContext'
 import NerdStats from '../NerdStats'
 
@@ -33,9 +33,17 @@ const CurrentScreen = ({ screen }:CurrentScreenProps) => {
 }
 
 const App = () => {
-  const [save, setSave] = useState("")
+  const [save, setSave] = useState({
+    ...defaultSave,
+    setSave: (newSave:string) => setSave({...save, save: newSave}),
+    setDecodedSave: (newDecodedSave:SaveFile) => setSave({...save, decodedSave: newDecodedSave}),
+    setQuarkGain: (newQuarkGain:number) => setSave({...save, quarkGain: newQuarkGain}),
+    setPowderRatio: (newPowderRatio:number) => setSave({...save, powderRatio: newPowderRatio}),
+    setAddUses: (newAddUses:number) => setSave({...save, addUses: newAddUses})
+  })
   const [timer, setTimer] = useState(new Date())
   const [currentScreen, setCurrentScreen] = useState('shop-opti')
+
   return (
     <SaveContext.Provider value={save}>
       <TimerContext.Provider value={timer}>
@@ -46,7 +54,7 @@ const App = () => {
             </Grid.Column>
             <Grid.Column width={16} textAlign='center' color='black'>
               <Timer interval={500} setTimer={setTimer} currentTimer={timer} />
-              <SaveInput setSave={setSave} />
+              <SaveInput />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
