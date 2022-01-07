@@ -2,8 +2,8 @@ import React from 'react'
 import { Button, Grid } from 'semantic-ui-react'
 
 interface MenuProps {
-  currentScreen:string,
-  onChange:Function
+  currentScreen: string,
+  onChange: Function
 }
 
 interface MenuItemProps {
@@ -13,8 +13,8 @@ interface MenuItemProps {
   value: string
 }
 
-const MenuItem = ({ label, onChange, currentScreen, value }:MenuItemProps) => {
-  return <Button fluid onClick={() => onChange(value)} active={currentScreen === value}>{ label }</Button>
+const MenuItem = ({ label, onChange, currentScreen, value }: MenuItemProps) => {
+  return <Button fluid onClick={() => onChange(value)} active={currentScreen === value}>{label}</Button>
 }
 
 const menuItems = [
@@ -40,15 +40,15 @@ const menuItems = [
   }
 ]
 
-const Menu = ({currentScreen, onChange}:MenuProps) => {
+const Menu = ({ currentScreen, onChange }: MenuProps) => {
   return (
     <Grid columns='equal'>
       <Grid.Row centered>
-          {menuItems.map((menuItem) => (
+        {menuItems.map((menuItem) => (
           <Grid.Column>
             <MenuItem {...menuItem} onChange={onChange} currentScreen={currentScreen} />
           </Grid.Column>
-          ))}
+        ))}
       </Grid.Row>
     </Grid>
   )

@@ -7,7 +7,7 @@ interface TimerProps {
   currentTimer: Date,
 }
 
-const Timer = ({ interval, setTimer, currentTimer }:TimerProps) => {
+const Timer = ({ interval, setTimer, currentTimer }: TimerProps) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => setTimer(new Date()), interval)
     return () => clearTimeout(timeoutId)

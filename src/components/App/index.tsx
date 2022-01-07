@@ -15,8 +15,8 @@ interface CurrentScreenProps {
   screen: string
 }
 
-const CurrentScreen = ({ screen }:CurrentScreenProps) => {
-  switch(screen) {
+const CurrentScreen = ({ screen }: CurrentScreenProps) => {
+  switch (screen) {
     case 'hept-list':
       return <HeptList />
     case 'nerd-stats':
@@ -28,21 +28,21 @@ const CurrentScreen = ({ screen }:CurrentScreenProps) => {
     case 'tiers':
       return <Tiers />
     default:
-      return <ShopOpti />
+      return <Parameters />
   }
 }
 
 const App = () => {
   const [save, setSave] = useState({
     ...defaultSave,
-    setSave: (newSave:string) => setSave({...save, save: newSave}),
-    setDecodedSave: (newDecodedSave:SaveFile) => setSave({...save, decodedSave: newDecodedSave}),
-    setQuarkGain: (newQuarkGain:number) => setSave({...save, quarkGain: newQuarkGain}),
-    setPowderRatio: (newPowderRatio:number) => setSave({...save, powderRatio: newPowderRatio}),
-    setAddUses: (newAddUses:number) => setSave({...save, addUses: newAddUses})
+    setSave: (newSave: string) => setSave({ ...save, save: newSave }),
+    setDecodedSave: (newDecodedSave: SaveFile) => setSave({ ...save, decodedSave: newDecodedSave }),
+    setQuarkGain: (newQuarkGain: number) => setSave({ ...save, quarkGain: newQuarkGain }),
+    setPowderRatio: (newPowderRatio: number) => setSave({ ...save, powderRatio: newPowderRatio }),
+    setAddUses: (newAddUses: number) => setSave({ ...save, addUses: newAddUses })
   })
   const [timer, setTimer] = useState(new Date())
-  const [currentScreen, setCurrentScreen] = useState('shop-opti')
+  const [currentScreen, setCurrentScreen] = useState('parameters')
 
   return (
     <SaveContext.Provider value={save}>
@@ -59,13 +59,13 @@ const App = () => {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={16} textAlign='center' color='black'>
-              <Menu currentScreen={currentScreen} onChange={(newScreen:string) => setCurrentScreen(newScreen)} />
+              <Menu currentScreen={currentScreen} onChange={(newScreen: string) => setCurrentScreen(newScreen)} />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-          <Grid.Column width={16} textAlign='center' color='black'>
-            <CurrentScreen screen={currentScreen} />
-          </Grid.Column>
+            <Grid.Column width={16} textAlign='center' color='black'>
+              <CurrentScreen screen={currentScreen} />
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </TimerContext.Provider>

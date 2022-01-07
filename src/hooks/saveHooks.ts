@@ -3,7 +3,7 @@ import SaveContext from '../contexts/saveContext'
 
 export const useSave = () => {
   const { save, setSave } = useContext(SaveContext)
-  return  { save,  setSave }
+  return { save, setSave }
 }
 
 export const useQuarkGain = () => {

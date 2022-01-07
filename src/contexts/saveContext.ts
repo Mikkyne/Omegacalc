@@ -5,15 +5,15 @@ export interface SaveFile {
 
 export const defaultSave = {
   save: "",
-  setSave: (save:string) => {},
+  setSave: (save: string) => { },
   decodedSave: {},
-  setDecodedSave: (decodedSave:SaveFile) => {},
-  quarkGain: 1,
-  setQuarkGain: (quarkGain:number) => {},
+  setDecodedSave: (decodedSave: SaveFile) => { },
+  quarkGain: 0.5,
+  setQuarkGain: (quarkGain: number) => { },
   powderRatio: 0.5,
-  setPowderRatio: (powderRatio:number) => {},
+  setPowderRatio: (powderRatio: number) => { },
   addUses: 24,
-  setAddUses: (addUses:number) => {}
+  setAddUses: (addUses: number) => { }
 }
 
 const saveContext = React.createContext(defaultSave)

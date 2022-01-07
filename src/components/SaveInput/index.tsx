@@ -5,7 +5,7 @@ import { useSave, useDecodedSave } from '../../hooks/saveHooks'
 const SaveInput = () => {
   const { save, setSave } = useSave()
   const { setDecodedSave } = useDecodedSave()
-  const saveChanged = (newSave:string) => {
+  const saveChanged = (newSave: string) => {
     setSave(newSave)
   }
 
@@ -18,9 +18,9 @@ const SaveInput = () => {
     <Grid>
       <Grid.Row>
         <Grid.Column width={16}>
-          <Input  placeholder='Enter save here...' size='large' onChange={(e) => saveChanged(e.target.value)} value={save} />
+          <Input placeholder='Enter save here...' size='large' onChange={(e) => saveChanged(e.target.value)} value={save} />
         </Grid.Column>
-        <Grid.Column  width={16}>
+        <Grid.Column width={16}>
         </Grid.Column>
         <Divider hidden />
         <Grid.Column width={16}>
