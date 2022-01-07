@@ -19,10 +19,6 @@ const MenuItem = ({ label, onChange, currentScreen, value }: MenuItemProps) => {
 
 const menuItems = [
   {
-    label: 'Parameters',
-    value: 'parameters'
-  },
-  {
     label: 'Tiers',
     value: 'tiers'
   },

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dropdown, Grid, Input } from 'semantic-ui-react'
-import { useQuarkGain, usePowderRatio, useAddUses, useHeptsPerSecond } from '../../hooks/saveHooks'
+import { useQuarkGain, usePowderRatio, useAddUses, useHeptsPerSecond, useSave, useDecodedSave } from '../../hooks/saveHooks'
 
 
 const optionsquark = [
@@ -29,9 +29,21 @@ const Parameters = () => {
   const { setPowderRatio } = usePowderRatio()
   const { setAddUses } = useAddUses()
   const { setHeptsPerSecond } = useHeptsPerSecond()
+  const { save, setSave } = useSave()
+  const { setDecodedSave } = useDecodedSave()
+  const saveChanged = (newSave: string) => {
+    const decodedSave = atob(newSave)
+    setSave(newSave)
+    setDecodedSave(JSON.parse(decodedSave))
+  }
+
   return (
     <Grid>
       <Grid.Row centered>
+        <Grid.Column textAlign='center' width={2}>
+          <h5>Save File</h5>
+          <Input placeholder='Enter save here...' onChange={(e) => saveChanged(e.target.value)} value={save} />
+        </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h5>Quark Gain</h5>
           <Dropdown placeholder='Select one' selection options={optionsquark} onChange={(_, d) => setQuarkGain(d.value as number)} />

@@ -28,14 +28,12 @@ const CurrentScreen = ({ screen }: CurrentScreenProps) => {
       return <HeptList />
     case 'nerd-stats':
       return <NerdStats />
-    case 'parameters':
-      return <Parameters />
     case 'shop-opti':
       return <ShopOpti />
     case 'tiers':
       return <Tiers />
     default:
-      return <Parameters />
+      return <Tiers />
   }
 }
 
@@ -60,9 +58,11 @@ const App = () => {
             <Grid.Column width={16} textAlign='center' color='black'>
               <h1>Omega Calc</h1>
             </Grid.Column>
-            <Grid.Column width={16} textAlign='center' color='black'>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={16} color='black'>
               <Timer interval={500} setTimer={setTimer} currentTimer={timer} />
-              <SaveInput />
+              <Parameters />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
