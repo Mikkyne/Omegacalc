@@ -12,6 +12,7 @@ import TimerContext from '../../contexts/timerContext'
 import NerdStats from '../NerdStats'
 import { useSave } from '../../hooks/saveHooks'
 import Explanation from '../Explanation'
+import Overview from '../Overview'
 
 interface CurrentScreenProps {
   screen: string
@@ -32,8 +33,10 @@ const CurrentScreen = ({ screen }: CurrentScreenProps) => {
       return <ShopOpti />
     case 'tiers':
       return <Tiers />
+    case 'overview':
+      return <Overview />
     default:
-      return <Tiers />
+      return <Overview />
   }
 }
 
