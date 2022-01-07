@@ -25,3 +25,9 @@ export const usePowderRatio = () => {
   const { powderRatio, setPowderRatio } = useContext(SaveContext)
   return { powderRatio, setPowderRatio }
 }
+
+export const useHepts = () => {
+  const { decodedSave } = useDecodedSave()
+  const { hepteractCrafts } = decodedSave
+  return hepteractCrafts
+}

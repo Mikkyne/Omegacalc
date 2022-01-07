@@ -1,12 +1,33 @@
 import React from 'react'
 
+interface HepteractSave {
+  BAL: number,
+  BASE_CAP: number,
+  CAP: number,
+  DISCOUNT: number,
+  HEPTERACT_CONVERSION: number,
+  UNLOCKED: boolean
+}
+
+interface HepteractSaveList {
+  abyss: HepteractSave,
+  accelerator: HepteractSave,
+  acceleratorBoost: HepteractSave,
+  challenge: HepteractSave,
+  chronos: HepteractSave,
+  hyperrealism: HepteractSave,
+  multiplier: HepteractSave,
+  quark: HepteractSave
+}
+
 export interface SaveFile {
+  hepteractCrafts: HepteractSaveList
 }
 
 export const defaultSave = {
   save: "",
   setSave: (save: string) => { },
-  decodedSave: {},
+  decodedSave: {} as SaveFile,
   setDecodedSave: (decodedSave: SaveFile) => { },
   quarkGain: 0.5,
   setQuarkGain: (quarkGain: number) => { },

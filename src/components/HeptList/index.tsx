@@ -12,7 +12,7 @@ const optionshept = [
   { key: 'Multi', text: 'Multi', value: 'Multi' },
 ]
 
-const App = () => {
+const HeptList = () => {
   return (
     <Grid>
       <Grid.Row centered>
@@ -33,4 +33,4 @@ const App = () => {
   )
 }
 
-export default App
+export default HeptList
