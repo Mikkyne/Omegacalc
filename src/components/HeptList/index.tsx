@@ -1,6 +1,5 @@
 import React from 'react'
 import { Dropdown, Grid, Input, Table } from 'semantic-ui-react'
-import { useHepts } from '../../hooks/saveHooks'
 
 const optionshept = [
   { key: 'Chronos', text: 'Chronos', value: 'Chronos' },

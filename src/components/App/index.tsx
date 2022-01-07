@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Grid } from 'semantic-ui-react'
-import SaveInput from '../SaveInput'
 import Timer from '../Timer'
 import HeptList from '../HeptList'
 import Parameters from '../Parameters'
