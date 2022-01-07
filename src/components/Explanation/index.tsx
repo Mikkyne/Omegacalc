@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Grid, Header, Segment, Portal } from 'semantic-ui-react'
 
-
-  const decodeSave = () => {
-    const newDecodedSave = atob(save)
-    setDecodedSave(JSON.parse(newDecodedSave))
-  }
-
-
 export default class Explanation extends Component {
   state = { open: false }
 
@@ -19,8 +12,8 @@ export default class Explanation extends Component {
 
     return (
       <Grid>
+      <Grid.Row>
         <Grid.Column>
-        <Button onClick={() => decodeSave()}>Decode Save</Button>
           <Button
             content='Explanation'
             disabled={open}
@@ -49,6 +42,11 @@ export default class Explanation extends Component {
             </Segment>
           </Portal>
         </Grid.Column>
+        <Grid.Column>
+        <h2>ALL THE ESTIMATED CALCULATION DOESN'T INCLUDE EVENT BONUSES</h2>
+        <h4>Credits to : Lacklub, KittensGiveMorboGas, Eric, Workmad3, Actuallyasriel and Mikkyne</h4>
+        </Grid.Column>
+        </Grid.Row>
       </Grid>
     )
   }
