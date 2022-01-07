@@ -1,17 +1,13 @@
 import React from 'react'
 import { Button, Input, Grid, Divider } from 'semantic-ui-react'
 import { useSave, useDecodedSave } from '../../hooks/saveHooks'
+import Explanation from '../Explanation'
 
 const SaveInput = () => {
   const { save, setSave } = useSave()
   const { setDecodedSave } = useDecodedSave()
   const saveChanged = (newSave: string) => {
     setSave(newSave)
-  }
-
-  const decodeSave = () => {
-    const newDecodedSave = atob(save)
-    setDecodedSave(JSON.parse(newDecodedSave))
   }
 
   return (
@@ -24,7 +20,7 @@ const SaveInput = () => {
         </Grid.Column>
         <Divider hidden />
         <Grid.Column width={16}>
-          <Button onClick={() => decodeSave()}>Decode Save</Button>
+          <Explanation/>
         </Grid.Column>
       </Grid.Row>
     </Grid>
