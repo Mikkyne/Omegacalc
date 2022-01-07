@@ -28696,6 +28696,14 @@ body.pushable > .pusher {
     background-color: #fcfcfd;
   }
 }
+
+/* src/index.css */
+body {
+  background-color: #b7b7b7;
+}
+#app {
+  padding: 1rem;
+}
 /*!
 * # Semantic UI 2.4.0 - Accordion
 * http://github.com/semantic-org/semantic-ui/
