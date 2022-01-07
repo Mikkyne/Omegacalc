@@ -184,6 +184,10 @@ const Tiers = () => {
           </Grid.Column>
         </Grid.Row>
       </Grid.Column>
+      <Grid.Row centered>
+        <Grid.Column textAlign='center' width={8}><h4>Ratio Chronos/Hyper/Challenge</h4></Grid.Column>
+        <Grid.Column textAlign='center' width={8}><h4>Ratio Accel/A. Boost/Multi</h4></Grid.Column>
+      </Grid.Row>
     </Grid>
   )
 }
