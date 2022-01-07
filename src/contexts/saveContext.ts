@@ -27,17 +27,17 @@ export interface SaveFile {
 
 export const defaultSave = {
   save: "",
-  setSave: (save: string) => { },
+  setSave: (_: string) => { },
   decodedSave: {} as SaveFile,
-  setDecodedSave: (decodedSave: SaveFile) => { },
+  setDecodedSave: (_: SaveFile) => { },
   quarkGain: 0.5,
-  setQuarkGain: (quarkGain: number) => { },
+  setQuarkGain: (_: number) => { },
   powderRatio: 0.5,
-  setPowderRatio: (powderRatio: number) => { },
+  setPowderRatio: (_: number) => { },
   addUses: 24,
-  setAddUses: (addUses: number) => { },
+  setAddUses: (_: number) => { },
   heptsPerSecond: 0,
-  setHeptsPerSecond: (heptsPerSecond: number) => { },
+  setHeptsPerSecond: (_: number) => { },
 }
 
 const saveContext = React.createContext(defaultSave)
