@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import TimerContext from '../../contexts/timerContext'
+import React, { useEffect } from 'react'
 
 interface TimerProps {
   interval: number,
@@ -9,8 +8,8 @@ interface TimerProps {
 
 const Timer = ({ interval, setTimer, currentTimer }: TimerProps) => {
   useEffect(() => {
-    const timeoutId = setTimeout(() => setTimer(new Date()), interval)
-    return () => clearTimeout(timeoutId)
+    const timeoutId = requestAnimationFrame(() => setTimer(new Date()))
+    return () => cancelAnimationFrame(timeoutId)
   }, [interval, currentTimer])
 
   return <></>
