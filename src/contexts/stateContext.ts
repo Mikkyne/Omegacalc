@@ -25,21 +25,38 @@ export interface SaveFile {
   offlinetick: number
 }
 
-export const defaultSave = {
-  save: "",
-  setSave: (_: string) => { },
-  decodedSave: {} as SaveFile,
-  setDecodedSave: (_: SaveFile) => { },
-  quarkGain: 0.5,
-  setQuarkGain: (_: number) => { },
-  powderRatio: 0.5,
-  setPowderRatio: (_: number) => { },
-  addUses: 24,
-  setAddUses: (_: number) => { },
-  heptsPerSecond: 0,
-  setHeptsPerSecond: (_: number) => { },
+export interface State {
+  save: string,
+  decodedSave: SaveFile,
+  quarkGain: number,
+  powderRatio: number
+  addUses: number,
+  heptsPerSecond: number
+
+  setSave: (a:string) => void,
+  setDecodedSave: (a:SaveFile) => void,
+  setQuarkGain: (a:number) => void,
+  setPowderRatio: (a:number) => void,
+  setAddUses: (a:number) => void,
+  setHeptsPerSecond: (a:number) => void
 }
 
-const saveContext = React.createContext(defaultSave)
+export const defaultState = {
+  save: "",
+  decodedSave: {} as SaveFile,
+  quarkGain: 0.5,
+  powderRatio: 0.5,
+  addUses: 24,
+  heptsPerSecond: 0,
+
+  setSave: (_: string) => { },
+  setDecodedSave: (_: SaveFile) => { },
+  setQuarkGain: (_: number) => { },
+  setPowderRatio: (_: number) => { },
+  setAddUses: (_: number) => { },
+  setHeptsPerSecond: (_: number) => { },
+} as State
+
+const saveContext = React.createContext(defaultState)
 
 export default saveContext

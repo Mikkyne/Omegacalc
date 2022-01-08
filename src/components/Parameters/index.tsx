@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dropdown, Grid, Input } from 'semantic-ui-react'
+import { SaveFile } from '../../contexts/stateContext'
 import { useQuarkGain, usePowderRatio, useAddUses, useHeptsPerSecond, useSave, useDecodedSave } from '../../hooks/saveHooks'
 
 
@@ -21,20 +22,24 @@ const optionspowder = [
   { key: '50%', text: '50%', value: 0.5 },
   { key: '75%', text: '75%', value: 0.75 },
   { key: '100%', text: '100%', value: 1 },
-
 ]
 
+export const decodeSave = (save: string):SaveFile => {
+  const decodedSave = atob(save)
+  return JSON.parse(decodedSave)
+}
+
 const Parameters = () => {
-  const { setQuarkGain } = useQuarkGain()
-  const { setPowderRatio } = usePowderRatio()
-  const { setAddUses } = useAddUses()
-  const { setHeptsPerSecond } = useHeptsPerSecond()
+  const { quarkGain, setQuarkGain } = useQuarkGain()
+  const { powderRatio, setPowderRatio } = usePowderRatio()
+  const { addUses, setAddUses } = useAddUses()
+  const { heptsPerSecond, setHeptsPerSecond } = useHeptsPerSecond()
   const { save, setSave } = useSave()
   const { setDecodedSave } = useDecodedSave()
+
   const saveChanged = (newSave: string) => {
-    const decodedSave = atob(newSave)
     setSave(newSave)
-    setDecodedSave(JSON.parse(decodedSave))
+    setDecodedSave(decodeSave(newSave))
   }
 
   return (
@@ -46,19 +51,19 @@ const Parameters = () => {
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h5>Quark Gain</h5>
-          <Dropdown placeholder='Select one' selection options={optionsquark} onChange={(_, d) => setQuarkGain(d.value as number)} />
+          <Dropdown placeholder='Select one' selection options={optionsquark} onChange={(_, d) => setQuarkGain(d.value as number)} value={quarkGain} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h5>Powder/Chronos Ratio</h5>
-          <Dropdown placeholder='Select one' selection options={optionspowder} onChange={(_, d) => setPowderRatio(d.value as number)} />
+          <Dropdown placeholder='Select one' selection options={optionspowder} onChange={(_, d) => setPowderRatio(d.value as number)} value={powderRatio} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h5>Number of Add per Day</h5>
-          <Input onChange={(e) => setAddUses(parseInt(e.target.value, 10))} />
+          <Input onChange={(e) => setAddUses(parseInt(e.target.value, 10))} value={addUses} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h5>Hepteract per second</h5>
-          <Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))}/>
+          <Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))} value={heptsPerSecond} />
         </Grid.Column>
       </Grid.Row>
     </Grid>

@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Grid } from 'semantic-ui-react'
 import Timer from '../Timer'
 import HeptList from '../HeptList'
-import Parameters from '../Parameters'
+import Parameters, { decodeSave } from '../Parameters'
 import ShopOpti from '../ShopOpti'
 import Tiers from '../Tiers'
 import Menu from '../Menu'
-import SaveContext, { defaultSave, SaveFile } from '../../contexts/saveContext'
+import StateContext, { defaultState, State, SaveFile } from '../../contexts/stateContext'
 import TimerContext from '../../contexts/timerContext'
 import NerdStats from '../NerdStats'
 import { useSave } from '../../hooks/saveHooks'
@@ -39,21 +39,48 @@ const CurrentScreen = ({ screen }: CurrentScreenProps) => {
   }
 }
 
+const updateStoredState = (state:State):State => {
+  localStorage.setItem('saveFile', state.save)
+  localStorage.setItem('quarkGain', state.quarkGain.toString())
+  localStorage.setItem('powderRatio', state.powderRatio.toString())
+  localStorage.setItem('addUses', state.addUses.toString())
+  localStorage.setItem('heptsPerSecond', state.heptsPerSecond.toString())
+  return state
+}
+
+const restoreStoredState = (defaultState:State):State => {
+  try {
+    return {
+      ...defaultState,
+      save: localStorage.getItem('saveFile'),
+      quarkGain: Number.parseFloat(localStorage.getItem('quarkGain')),
+      powderRatio: Number.parseFloat(localStorage.getItem('powderRatio')),
+      addUses: Number.parseInt(localStorage.getItem('addUses')),
+      heptsPerSecond: Number.parseFloat(localStorage.getItem('heptsPerSecond')),
+      decodedSave: decodeSave(localStorage.getItem('saveFile'))
+    }
+  } catch(e) {
+    console.log(e)
+    return defaultState
+  }
+}
+
 const App = () => {
-  const [save, setSave] = useState({
-    ...defaultSave,
-    setSave: (newSave: string) => setSave((save) => ({ ...save, save: newSave })),
-    setDecodedSave: (newDecodedSave: SaveFile) => setSave((save) => ({ ...save, decodedSave: newDecodedSave })),
-    setQuarkGain: (newQuarkGain: number) => setSave((save) => ({ ...save, quarkGain: newQuarkGain })),
-    setPowderRatio: (newPowderRatio: number) => setSave((save) => ({ ...save, powderRatio: newPowderRatio })),
-    setAddUses: (newAddUses: number) => setSave((save) => ({ ...save, addUses: newAddUses })),
-    setHeptsPerSecond: (newHeptsPerSecond: number) => setSave((save) => ({ ...save, heptsPerSecond: newHeptsPerSecond })),
-  })
+  const [state, setState] = useState(() => ({
+    ...restoreStoredState(defaultState),
+    setSave: (newSave: string) => setState((previousState:State):State => updateStoredState({ ...previousState, save: newSave })),
+    setDecodedSave: (newDecodedSave: SaveFile) => setState((previousState) => updateStoredState({ ...previousState, decodedSave: newDecodedSave })),
+    setQuarkGain: (newQuarkGain: number) => setState((previousState) => updateStoredState({ ...previousState, quarkGain: newQuarkGain })),
+    setPowderRatio: (newPowderRatio: number) => setState((previousState) => updateStoredState({ ...previousState, powderRatio: newPowderRatio })),
+    setAddUses: (newAddUses: number) => setState((previousState) => updateStoredState({ ...previousState, addUses: newAddUses })),
+    setHeptsPerSecond: (newHeptsPerSecond: number) => setState((previousState) => updateStoredState({ ...previousState, heptsPerSecond: newHeptsPerSecond })),
+  }))
+
   const [timer, setTimer] = useState(new Date())
   const [currentScreen, setCurrentScreen] = useState('parameters')
 
   return (
-    <SaveContext.Provider value={save}>
+    <StateContext.Provider value={state}>
       <TimerContext.Provider value={timer}>
         <Grid stretched>
           <Grid.Row>
@@ -84,7 +111,7 @@ const App = () => {
           </Grid.Row>
         </Grid>
       </TimerContext.Provider>
-    </SaveContext.Provider>
+    </StateContext.Provider>
   )
 }
 
