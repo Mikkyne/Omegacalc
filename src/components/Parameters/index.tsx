@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dropdown, Grid, Input } from 'semantic-ui-react'
+import { SaveFile } from '../../contexts/stateContext'
 import { useQuarkGain, usePowderRatio, useAddUses, useHeptsPerSecond, useSave, useDecodedSave } from '../../hooks/saveHooks'
 
 
@@ -21,8 +22,12 @@ const optionspowder = [
   { key: '50%', text: '50%', value: 0.5 },
   { key: '75%', text: '75%', value: 0.75 },
   { key: '100%', text: '100%', value: 1 },
-
 ]
+
+export const decodeSave = (save: string):SaveFile => {
+  const decodedSave = atob(save)
+  return JSON.parse(decodedSave)
+}
 
 const Parameters = () => {
   const { setQuarkGain } = useQuarkGain()
@@ -31,10 +36,10 @@ const Parameters = () => {
   const { setHeptsPerSecond } = useHeptsPerSecond()
   const { save, setSave } = useSave()
   const { setDecodedSave } = useDecodedSave()
+
   const saveChanged = (newSave: string) => {
-    const decodedSave = atob(newSave)
     setSave(newSave)
-    setDecodedSave(JSON.parse(decodedSave))
+    setDecodedSave(decodeSave(newSave))
   }
 
   return (
