@@ -4,10 +4,10 @@ import { useHepts, Hepteract, useHeptsPerSecond } from '../../hooks/saveHooks'
 import { useSecondsSinceSave } from '../../hooks/timerHooks'
 
 interface HeptTableRowProps {
-  hepteract:Hepteract
+  hepteract: Hepteract
 }
 
-const HeptTableRow = ({ hepteract }:HeptTableRowProps) => {
+const HeptTableRow = ({ hepteract }: HeptTableRowProps) => {
   const saveTime = useSecondsSinceSave()
   const { heptsPerSecond } = useHeptsPerSecond()
 
