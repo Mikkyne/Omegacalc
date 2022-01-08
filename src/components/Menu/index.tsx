@@ -51,7 +51,7 @@ const Menu = ({ currentScreen, onChange }: MenuProps) => {
     <Grid columns='equal'>
       <Grid.Row centered>
         {menuItems.map((menuItem) => (
-          <Grid.Column>
+          <Grid.Column key={menuItem.value}>
             <MenuItem {...menuItem} onChange={onChange} currentScreen={currentScreen} />
           </Grid.Column>
         ))}
