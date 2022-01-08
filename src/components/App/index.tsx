@@ -40,7 +40,7 @@ const CurrentScreen = ({ screen }: CurrentScreenProps) => {
 }
 
 const updateStoredState = (state:State):State => {
-  localStorage.setItem('save', state.save)
+  localStorage.setItem('saveFile', state.save)
   localStorage.setItem('quarkGain', state.quarkGain.toString())
   localStorage.setItem('powderRatio', state.powderRatio.toString())
   localStorage.setItem('addUses', state.addUses.toString())
@@ -49,32 +49,35 @@ const updateStoredState = (state:State):State => {
 }
 
 const restoreStoredState = (defaultState:State):State => {
-  return {
-    ...defaultState,
-    save: localStorage.getItem('save'),
-    quarkGain: Number.parseFloat(localStorage.getItem('quarkGain')),
-    powderRatio: Number.parseFloat(localStorage.getItem('powderRatio')),
-    addUses: Number.parseInt(localStorage.getItem('addUses')),
-    heptsPerSecond: Number.parseFloat(localStorage.getItem('heptsPerSecond')),
-    decodedSave: decodeSave(localStorage.getItem('save'))
+  try {
+    return {
+      ...defaultState,
+      save: localStorage.getItem('saveFile'),
+      quarkGain: Number.parseFloat(localStorage.getItem('quarkGain')),
+      powderRatio: Number.parseFloat(localStorage.getItem('powderRatio')),
+      addUses: Number.parseInt(localStorage.getItem('addUses')),
+      heptsPerSecond: Number.parseFloat(localStorage.getItem('heptsPerSecond')),
+      decodedSave: decodeSave(localStorage.getItem('saveFile'))
+    }
+  } catch(e) {
+    console.log(e)
+    return defaultState
   }
 }
 
 const App = () => {
   const [state, setState] = useState(() => ({
     ...restoreStoredState(defaultState),
-    setSave: (newSave: string) => setState((previousState) => ({ ...previousState, save: newSave })),
-    setDecodedSave: (newDecodedSave: SaveFile) => setState((save) => ({ ...save, decodedSave: newDecodedSave })),
-    setQuarkGain: (newQuarkGain: number) => setState((save) => ({ ...save, quarkGain: newQuarkGain })),
-    setPowderRatio: (newPowderRatio: number) => setState((save) => ({ ...save, powderRatio: newPowderRatio })),
-    setAddUses: (newAddUses: number) => setState((save) => ({ ...save, addUses: newAddUses })),
-    setHeptsPerSecond: (newHeptsPerSecond: number) => setState((save) => ({ ...save, heptsPerSecond: newHeptsPerSecond })),
+    setSave: (newSave: string) => setState((previousState:State):State => updateStoredState({ ...previousState, save: newSave })),
+    setDecodedSave: (newDecodedSave: SaveFile) => setState((previousState) => updateStoredState({ ...previousState, decodedSave: newDecodedSave })),
+    setQuarkGain: (newQuarkGain: number) => setState((previousState) => updateStoredState({ ...previousState, quarkGain: newQuarkGain })),
+    setPowderRatio: (newPowderRatio: number) => setState((previousState) => updateStoredState({ ...previousState, powderRatio: newPowderRatio })),
+    setAddUses: (newAddUses: number) => setState((previousState) => updateStoredState({ ...previousState, addUses: newAddUses })),
+    setHeptsPerSecond: (newHeptsPerSecond: number) => setState((previousState) => updateStoredState({ ...previousState, heptsPerSecond: newHeptsPerSecond })),
   }))
 
   const [timer, setTimer] = useState(new Date())
   const [currentScreen, setCurrentScreen] = useState('parameters')
-
-  updateStoredState(state)
 
   return (
     <StateContext.Provider value={state}>

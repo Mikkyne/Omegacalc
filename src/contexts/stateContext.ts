@@ -33,12 +33,12 @@ export interface State {
   addUses: number,
   heptsPerSecond: number
 
-  setSave: Function,
-  setDecodedSave: Function,
-  setQuarkGain: Function,
-  setPowderRatio: Function,
-  setAddUses: Function,
-  setHeptsPerSecond: Function
+  setSave: (a:string) => void,
+  setDecodedSave: (a:SaveFile) => void,
+  setQuarkGain: (a:number) => void,
+  setPowderRatio: (a:number) => void,
+  setAddUses: (a:number) => void,
+  setHeptsPerSecond: (a:number) => void
 }
 
 export const defaultState = {
