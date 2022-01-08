@@ -21,7 +21,7 @@ interface CurrentScreenProps {
 const CurrentScreen = ({ screen }: CurrentScreenProps) => {
   const { save } = useSave()
   if (save === '') {
-    return <div>Please enter a save file</div>
+    return <h1>Please enter a save file</h1>
   }
 
   switch (screen) {
