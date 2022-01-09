@@ -41,23 +41,23 @@ const Parameters = () => {
     <Grid>
       <Grid.Row centered>
         <Grid.Column textAlign='center' width={2}>
-          <h5>Save File</h5>
+          <h3>Save File</h3>
           <Input placeholder='Enter save here...' onChange={(e) => saveChanged(e.target.value)} value={save} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
-          <h5>Quark Gain</h5>
+          <h3>Quark Gain</h3>
           <Dropdown placeholder='Select one' selection options={optionsquark} onChange={(_, d) => setQuarkGain(d.value as number)} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
-          <h5>Powder/Chronos Ratio</h5>
+          <h3>Powder/Chronos Ratio</h3>
           <Dropdown placeholder='Select one' selection options={optionspowder} onChange={(_, d) => setPowderRatio(d.value as number)} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
-          <h5>Number of Add per Day</h5>
+          <h3>Number of Add per Day</h3>
           <Input onChange={(e) => setAddUses(parseInt(e.target.value, 10))} />
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
-          <h5>Hepteract per second</h5>
+          <h3>Hepteract per second</h3>
           <Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))}/>
         </Grid.Column>
       </Grid.Row>

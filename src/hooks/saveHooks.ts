@@ -41,17 +41,17 @@ export interface Hepteract {
 }
 
 interface Hepteracts {
+  chronos: Hepteract,
+  hyperrealism: Hepteract,
+  quark: Hepteract,
+  challenge: Hepteract,
   abyss: Hepteract,
   accelerator: Hepteract,
   acceleratorBoost: Hepteract,
-  challenge: Hepteract,
-  chronos: Hepteract,
-  hyperrealism: Hepteract,
-  multiplier: Hepteract,
-  quark: Hepteract
+  multiplier: Hepteract
 }
 
-const hydrateHepteract = (name:string, savedHept:HepteractSave):Hepteract => {
+const hydrateHepteract = (name: string, savedHept: HepteractSave): Hepteract => {
   return {
     name,
     balance: savedHept.BAL,
@@ -62,18 +62,18 @@ const hydrateHepteract = (name:string, savedHept:HepteractSave):Hepteract => {
   }
 }
 
-export const useHepts = ():Hepteracts => {
+export const useHepts = (): Hepteracts => {
   const { decodedSave } = useDecodedSave()
   const { hepteractCrafts } = decodedSave
 
   return {
-    abyss: hydrateHepteract('Abyss', hepteractCrafts.abyss),
-    accelerator: hydrateHepteract('Accelerator',hepteractCrafts.accelerator),
-    acceleratorBoost: hydrateHepteract('Accelerator Boosts', hepteractCrafts.acceleratorBoost),
     chronos: hydrateHepteract('Chronos', hepteractCrafts.chronos),
-    challenge: hydrateHepteract('Challenge', hepteractCrafts.challenge),
     hyperrealism: hydrateHepteract('Hyper', hepteractCrafts.hyperrealism),
-    multiplier: hydrateHepteract('Multiplier', hepteractCrafts.multiplier),
     quark: hydrateHepteract('Quark', hepteractCrafts.quark),
+    challenge: hydrateHepteract('Challenge', hepteractCrafts.challenge),
+    abyss: hydrateHepteract('Abyss', hepteractCrafts.abyss),
+    accelerator: hydrateHepteract('Accelerator', hepteractCrafts.accelerator),
+    acceleratorBoost: hydrateHepteract('Accelerator Boosts', hepteractCrafts.acceleratorBoost),
+    multiplier: hydrateHepteract('Multiplier', hepteractCrafts.multiplier),
   }
 }
