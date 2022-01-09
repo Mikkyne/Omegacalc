@@ -20,11 +20,11 @@ const Overview = () => {
           <h2>P4x5</h2>
           <Segment.Group>
             <Segment.Group horizontal>
-              <Segment textAlign='right'>Time left</Segment>
+              <Segment textAlign='right'>Time left :</Segment>
               <Segment textAlign='left'>Time left</Segment>
             </Segment.Group>
             <Segment.Group horizontal>
-              <Segment textAlign='right'>Hepts Left</Segment>
+              <Segment textAlign='right'>Hepts Left :</Segment>
               <Segment textAlign='left'>Hepts Left</Segment>
             </Segment.Group>
             <ProgressP45 />
