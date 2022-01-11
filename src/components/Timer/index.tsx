@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import TimerContext from '../../contexts/timerContext'
+import React, { useEffect } from 'react'
 
 interface TimerProps {
 	interval: number,
