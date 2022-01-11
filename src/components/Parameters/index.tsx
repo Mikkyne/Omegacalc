@@ -58,7 +58,7 @@ const Parameters = () => {
         </Grid.Column>
         <Grid.Column textAlign='center' width={2}>
           <h3>Hepteract per second</h3>
-          <Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))}/>
+          <Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))} />
         </Grid.Column>
       </Grid.Row>
     </Grid>

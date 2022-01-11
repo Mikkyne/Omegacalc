@@ -41,17 +41,17 @@ const Overview = () => {
                 <Grid.Row>
                   <Grid.Column>
                     <Segment.Group>
-                    <Segment.Group horizontal>
-                      <Segment>Orbs to reach Quark Gain</Segment>
-                      <Segment>Next Powder Goal</Segment>
-                      <Segment>Orbs to reach Powder Goal</Segment>
-                    </Segment.Group>
-                    <Segment.Group horizontal>
-                      <Segment>Orbs to reach Quark Gain</Segment>
-                      <Segment>Next Powder Goal</Segment>
-                      <Segment>Orbs to reach Powder Goal</Segment>
-                    </Segment.Group>
-                    <Divider/>
+                      <Segment.Group horizontal>
+                        <Segment>Orbs to reach Quark Gain</Segment>
+                        <Segment>Next Powder Goal</Segment>
+                        <Segment>Orbs to reach Powder Goal</Segment>
+                      </Segment.Group>
+                      <Segment.Group horizontal>
+                        <Segment>Orbs to reach Quark Gain</Segment>
+                        <Segment>Next Powder Goal</Segment>
+                        <Segment>Orbs to reach Powder Goal</Segment>
+                      </Segment.Group>
+                      <Divider />
                       <Segment.Group horizontal>
                         <Segment>What Should I Do</Segment>
                         <Segment>% Gain Buying Chronos</Segment>
@@ -62,7 +62,7 @@ const Overview = () => {
                         <Segment>% Gain Buying Chronos</Segment>
                         <Segment>% Gain Buying Orbs</Segment>
                       </Segment.Group>
-                      <Divider/>
+                      <Divider />
                       <Segment.Group horizontal>
                         <Segment>% Cube From Powder</Segment>
                         <Segment>% Cube From Next Powder</Segment>
@@ -101,7 +101,7 @@ const Overview = () => {
                         <Segment>Total Benefit</Segment>
                         <Segment>Quark Left</Segment>
                       </Segment.Group>
-                      <Divider/>
+                      <Divider />
                       <Segment.Group>
                         <Segment.Group horizontal>
                           <Segment>WoW 3 To Buy</Segment>
