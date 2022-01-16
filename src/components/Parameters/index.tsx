@@ -26,21 +26,21 @@ const Parameters = () => {
 	return (
 		<Grid>
 			<Grid.Row centered>
-				<Grid.Column textAlign='center' width={2}>
+				<Grid.Column textAlign='center' width={3}>
 					<h3>Save File</h3>
-					<Input placeholder='Enter save here...' onChange={(e) => saveChanged(e.target.value)} value={save} />
+					<Input fluid placeholder='Enter save here...' onChange={(e) => saveChanged(e.target.value)} value={save} />
 				</Grid.Column>
-				<Grid.Column textAlign='center' width={2}>
+				<Grid.Column textAlign='center' width={3}>
 					<h3>Quark Gain</h3>
-					<Dropdown placeholder='Select one' selection options={optionsquark} onChange={(_, d) => setQuarkGain(d.value as number)} />
+					<Dropdown fluid placeholder='Select one' selection options={optionsquark} onChange={(_, d) => setQuarkGain(d.value as number)} />
 				</Grid.Column>
-				<Grid.Column textAlign='center' width={2}>
+				<Grid.Column textAlign='center' width={3}>
 					<h3>Number of Add per Day</h3>
-					<Input onChange={(e) => setAddUses(parseInt(e.target.value, 10))} />
+					<Input fluid onChange={(e) => setAddUses(parseInt(e.target.value, 10))} />
 				</Grid.Column>
-				<Grid.Column textAlign='center' width={2}>
+				<Grid.Column textAlign='center' width={3}>
 					<h3>Hepteract per second</h3>
-					<Input onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))} />
+					<Input fluid onChange={(e) => setHeptsPerSecond(parseFloat(e.target.value))} />
 				</Grid.Column>
 			</Grid.Row>
 		</Grid>
