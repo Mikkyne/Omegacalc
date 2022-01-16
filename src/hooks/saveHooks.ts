@@ -21,11 +21,6 @@ export const useAddUses = () => {
 	return { addUses, setAddUses }
 }
 
-export const usePowderRatio = () => {
-	const { powderRatio, setPowderRatio } = useContext(SaveContext)
-	return { powderRatio, setPowderRatio }
-}
-
 export const useHeptsPerSecond = () => {
 	const { heptsPerSecond, setHeptsPerSecond } = useContext(SaveContext)
 	return { heptsPerSecond, setHeptsPerSecond }

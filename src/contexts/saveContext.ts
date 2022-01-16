@@ -32,8 +32,6 @@ export const defaultSave = {
 	setDecodedSave: (_: SaveFile) => { },
 	quarkGain: 0.5,
 	setQuarkGain: (_: number) => { },
-	powderRatio: 0.5,
-	setPowderRatio: (_: number) => { },
 	addUses: 24,
 	setAddUses: (_: number) => { },
 	heptsPerSecond: 0,
